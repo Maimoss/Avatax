@@ -15,7 +15,7 @@ const Avatar = ({ url, currentPos }: { url: string; currentPos: number }) => {
     setHeadMesh(headMesh);
   }, [nodes]);
 
-  useFrame((_, delta) => {
+  useFrame((_) => {
     if (!rotation) return;
     // For Facial Movement
     if (headMesh !== null) {
