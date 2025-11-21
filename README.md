@@ -1,73 +1,75 @@
-# React + TypeScript + Vite
+# 🤳**Avatax** 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Avatax is a **live facial motion tracking system** that transforms your **webcam input into real-time 3D avatar animation**.
 
-Currently, two official plugins are available:
+## ✨ **Features** 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+| **Feature**                      | **Description**                                            |
+| -------------------------------- | ---------------------------------------------------------- |
+| ⚡ **Real-Time Face Tracking**    | Uses **MediaPipe FaceMesh** to track facial landmarks.    |
+| 🤖 **Blendshape Animation**      | Maps expressions to avatar blendshapes via MediaPipe.      |
+| 🎥 **Webcam Motion Capture**     | Works using only your webcam—no extra hardware needed.     |
+| 🧩 **Customizable Avatars**      | Choose from the available built-in avatars.                |
+| 🎨 **Color Control Panel**       | Easily adjust lighting and environment colors.             |
+| 🌀 **Smooth Animations**         | UI and transitions powered by Framer Motion.               |
+| 📱 **Responsive UI**             | Tailwind CSS ensures perfect scaling on all screens.       |
+| 🖥️ **Three.js + R3F Rendering** | Fast and optimized 3D rendering with React-Three-Fiber.    |
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ⚙️ **Tech Stack** 
 
-## Expanding the ESLint configuration
+| **Technology**        | **Purpose**                    |
+| --------------------- | ------------------------------ |
+| ⚛️ **React.js**       | Builds the UI and layout.      |
+| 🧩 **TypeScript**     | Adds strong typing.            |
+| 🎮 **Three.js / R3F** | Renders 3D models smoothly.    |
+| 👁️ **MediaPipe**     | Detects face landmarks.        |
+| 🎞️ **Framer Motion** | Animates UI interactions.      |
+| 🎨 **Tailwind CSS**   | Provides fast, modern styling. |
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 🛠️ **Installation** 
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Follow these steps to run **Avatax** locally:
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+1. Clone the Repository:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+    ```bash
+    git clone https://github.com/KrishBharadwaj5678/Avatax.git
+    ```
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+2. Enter the Project Folder
+
+    ```bash
+    cd Avatax
+    ```
+
+3. Install Dependencies
+
+    ```bash
+    npm install
+    ```
+
+4. Start the Development Server
+
+    ```bash
+    npm run dev
+    ```
+
+5. Open the app in your browser.
+
+---
+
+## 🤝 Contributing 
+
+Want to contribute? Here's how:
+
+1. 🍴 Fork the repository.
+2. 🌿 Create a new branch (`git checkout -b feature-name`).
+3. ✍️ Make your changes and commit them (`git commit -am 'Add feature-name'`).
+4. 🚀 Push to your branch (`git push origin feature-name`).
+5. 🔄 Submit a pull request to merge into the main branch.
+
