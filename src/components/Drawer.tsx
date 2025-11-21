@@ -41,10 +41,12 @@ const Drawer = ({
               damping: 20,
             }}
           >
-            <h2 className="text-xl font-semibold mb-4">Select Your Avatar</h2>
+            <h2 className="text-2xl font-semibold avatar text-[#FAFAF9] ">
+              Select Your Avatar
+            </h2>
 
             {/* 2 per row grid, responsive */}
-            <div className="grid grid-cols-2 gap-3 md:gap-4.5 mt-6">
+            <div className="grid grid-cols-2 gap-3 md:gap-4.5 mt-4 md:mt-4.5">
               {avatars.map((avatar) => (
                 <motion.div
                   key={avatar.id}

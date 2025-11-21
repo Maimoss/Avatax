@@ -3,13 +3,12 @@ import { Canvas } from "@react-three/fiber";
 import { Euler, Matrix4 } from "three";
 import { FilesetResolver, FaceLandmarker } from "@mediapipe/tasks-vision";
 import { avatars } from "../constants/avatars.tsx";
-import { Palette, X } from "lucide-react";
+import { Palette } from "lucide-react";
 import Drawer from "../components/Drawer.tsx";
 import ColorPanel from "../components/ColorPanel.tsx";
 import { useAvatar } from "../context/AvatarContext.tsx";
 import { useColor } from "../context/ColorContext.tsx";
 import Avatar from "../components/Avatar.tsx";
-import Loader from "../components/Loader.tsx";
 import { Html } from "@react-three/drei";
 import { HashLoader } from "react-spinners";
 
@@ -144,7 +143,7 @@ function Home() {
         <div className="rounded-xl overflow-hidden border border-[#333] shadow-lg">
           <Canvas
             style={{
-              background: "rgba(255,255,255,0.2)",
+              background: "rgba(255,255,255,0.17)",
               backdropFilter: "blur(12px)",
               height: 350,
             }}

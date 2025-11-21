@@ -3,3 +3,14 @@
 html,body{
   background-color: black;
 }
+
+@font-face {
+  font-family: "Butler";
+  src: url("./assets/fonts/Classica.ttf") format('truetype');
+  font-style: normal;
+  font-display: swap;
+}
+
+.avatar{
+  font-family: "Butler";
+}
