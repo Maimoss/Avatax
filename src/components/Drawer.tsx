@@ -1,3 +1,76 @@
+// import { AnimatePresence, motion } from "framer-motion";
+// import { avatars } from "../constants/avatars.tsx";
+
+// const Drawer = ({
+//   open,
+//   setOpen,
+//   setURL,
+//   setCurrentPos,
+// }: {
+//   open: boolean;
+//   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
+//   setURL: React.Dispatch<React.SetStateAction<string>>;
+//   setCurrentPos: React.Dispatch<React.SetStateAction<number>>;
+// }) => {
+//   return (
+//     <AnimatePresence>
+//       {open && (
+//         <>
+//           {/* Background Blur Overlay */}
+//           <motion.div
+//             className="fixed bg-black/40 backdrop-blur-sm"
+//             initial={{ opacity: 0 }}
+//             animate={{ opacity: 1 }}
+//             exit={{ opacity: 0 }}
+//             onClick={() => setOpen(false)}
+//           />
+
+//           {/* Drawer Panel */}
+//           <motion.div
+//             className="fixed top-0 right-0 z-100 h-full w-75 bg-[#1a1a1a] text-white shadow-xl p-5"
+//             initial={{ x: 300 }}
+//             animate={{ x: 0 }}
+//             exit={{ x: 300 }}
+//             transition={{
+//               type: "spring",
+//               stiffness: 120,
+//               damping: 20,
+//             }}
+//           >
+//             <h2 className="text-xl font-semibold mb-4">Select Your Avatar</h2>
+//             <div className="flex flex-wrap justify-center gap-5 mt-6">
+//               {avatars.map((avatar) => (
+//                 <motion.div
+//                   key={avatar.id}
+//                   className="
+//                         relative cursor-pointer rounded-xl overflow-hidden
+//                         border border-white/20
+//                         backdrop-blur-xl
+//                         transition-all duration-300
+//                         "
+//                   onClick={() => (
+//                     setURL(avatar.url), setCurrentPos(avatar.posy)
+//                   )}
+//                 >
+//                   {/* Inner image container */}
+//                   <div className="overflow-hidden">
+//                     <img src={avatar.img} className="w-26 h-26 object-cover" />
+//                   </div>
+
+//                   {/* Soft overlay on hover */}
+//                   <div className="absolute inset-0 bg-white/10 opacity-0 hover:opacity-100 transition-all duration-300 rounded-xl" />
+//                 </motion.div>
+//               ))}
+//             </div>
+//           </motion.div>
+//         </>
+//       )}
+//     </AnimatePresence>
+//   );
+// };
+
+// export default Drawer;
+
 import { AnimatePresence, motion } from "framer-motion";
 import { avatars } from "../constants/avatars.tsx";
 
@@ -18,7 +91,7 @@ const Drawer = ({
         <>
           {/* Background Blur Overlay */}
           <motion.div
-            className="fixed bg-black/40 backdrop-blur-sm"
+            className="fixed inset-0 bg-black/40 backdrop-blur-sm z-40"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -27,10 +100,10 @@ const Drawer = ({
 
           {/* Drawer Panel */}
           <motion.div
-            className="fixed top-0 right-0 z-100 h-full w-75 bg-[#1a1a1a] text-white shadow-xl p-5"
-            initial={{ x: 300 }}
+            className="fixed top-0 right-0 z-50 h-full w-69 sm:w-80 md:w-78 bg-[#1a1a1a] text-white shadow-xl p-5"
+            initial={{ x: 350 }}
             animate={{ x: 0 }}
-            exit={{ x: 300 }}
+            exit={{ x: 350 }}
             transition={{
               type: "spring",
               stiffness: 120,
@@ -38,26 +111,29 @@ const Drawer = ({
             }}
           >
             <h2 className="text-xl font-semibold mb-4">Select Your Avatar</h2>
-            <div className="flex flex-wrap justify-center gap-5 mt-6">
+
+            {/* 2 per row grid, responsive */}
+            <div className="grid grid-cols-2 gap-3 md:gap-4.5 mt-6">
               {avatars.map((avatar) => (
                 <motion.div
                   key={avatar.id}
                   className="
-                        relative cursor-pointer rounded-xl overflow-hidden
-                        border border-white/20
-                        backdrop-blur-xl
-                        transition-all duration-300
-                        "
+                    relative cursor-pointer rounded-xl overflow-hidden
+                    border border-white/20 backdrop-blur-xl
+                    transition-all duration-300
+                    w-[110px] h-[105px]
+                    sm:w-[130px] sm:h-[120px]
+                    mx-auto
+                  "
                   onClick={() => (
                     setURL(avatar.url), setCurrentPos(avatar.posy)
                   )}
                 >
-                  {/* Inner image container */}
-                  <div className="overflow-hidden">
-                    <img src={avatar.img} className="w-26 h-26 object-cover" />
-                  </div>
+                  <img
+                    src={avatar.img}
+                    className="w-full h-full object-cover"
+                  />
 
-                  {/* Soft overlay on hover */}
                   <div className="absolute inset-0 bg-white/10 opacity-0 hover:opacity-100 transition-all duration-300 rounded-xl" />
                 </motion.div>
               ))}

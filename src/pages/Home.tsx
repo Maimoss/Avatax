@@ -85,7 +85,9 @@ function Home() {
     <div className="min-h-screen text-center text-white bg-[#0f0f0f] flex flex-col justify-center items-center gap-3 relative w-full px-4 py-6">
       {/* Setting Icons */}
       <div
-        className="absolute top-6 left-6 cursor-pointer text-white rounded-full bg-[#2A2D44] hover:bg-[#1D1F2F] p-4 transition-colors duration-200 z-100"
+        className={`${
+          colorPickerPopUp && "hidden"
+        } absolute left-3 top-6 md:left-6 cursor-pointer text-white rounded-full bg-[#2A2D44] hover:bg-[#1D1F2F] p-4 transition-colors duration-200 z-100`}
         onClick={() => setOpen(!open)}
       >
         <svg
@@ -102,10 +104,12 @@ function Home() {
 
       {/* Palette Icons */}
       <div
-        className="absolute top-26 left-6 cursor-pointer text-white rounded-full bg-[#2A2D44] hover:bg-[#1D1F2F] p-4 transition-colors duration-200 z-100"
+        className={`${
+          colorPickerPopUp && "hidden"
+        } absolute left-3 top-24.5 md:top-26 md:left-6 cursor-pointer text-white rounded-full bg-[#2A2D44] hover:bg-[#1D1F2F] p-4 transition-colors duration-200 z-100`}
         onClick={() => setColorPickerPopUp(!colorPickerPopUp)}
       >
-        {colorPickerPopUp ? <X size={27} /> : <Palette size={27} />}
+        <Palette size={27} />
       </div>
 
       {/* Color Panel */}
@@ -120,14 +124,21 @@ function Home() {
       />
 
       <div className="bg-[#1a1a1a] w-full max-w-xl rounded-xl p-6 shadow-xl flex flex-col gap-5 border border-[#2a2a2a]">
-        <div className="rounded-xl overflow-hidden border border-[#333] shadow-lg">
-          <video autoPlay id="video" className="w-full opacity-90" />
+        <div
+          className="
+    rounded-xl overflow-hidden border border-[#333] shadow-lg w-full h-[200px] md:h-[340px] lg:h-[300px]"
+        >
+          <video
+            autoPlay
+            id="video"
+            className="w-full object-cover h-full opacity-90"
+          />
         </div>
 
         <div className="rounded-xl overflow-hidden border border-[#333] shadow-lg">
           <Canvas
             style={{
-              background: "rgba(255,255,255,0.1)",
+              background: "rgba(255,255,255,0.2)",
               backdropFilter: "blur(12px)",
               height: 350,
             }}
@@ -135,9 +146,9 @@ function Home() {
           >
             <ambientLight intensity={2} />
 
-            <pointLight position={[2, 1, 2]} color={color} intensity={45} />
+            <pointLight position={[2, 1, 2]} color={color} intensity={50} />
 
-            <pointLight position={[-2, 1, -1]} color={color} intensity={45} />
+            <pointLight position={[-2, 1, -1]} color={color} intensity={50} />
 
             {/* Avatar */}
             <Avatar url={url} currentPos={currentPos} />
