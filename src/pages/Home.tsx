@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { Euler, Matrix4 } from "three";
 import { FilesetResolver, FaceLandmarker } from "@mediapipe/tasks-vision";
@@ -9,6 +9,9 @@ import ColorPanel from "../components/ColorPanel.tsx";
 import { useAvatar } from "../context/AvatarContext.tsx";
 import { useColor } from "../context/ColorContext.tsx";
 import Avatar from "../components/Avatar.tsx";
+import Loader from "../components/Loader.tsx";
+import { Html } from "@react-three/drei";
+import { HashLoader } from "react-spinners";
 
 function Home() {
   let { rotation, setRotation, blendShapes, setBlendShapes } = useAvatar();
@@ -20,6 +23,7 @@ function Home() {
 
   let [open, setOpen] = useState(false);
   let [currentPos, setCurrentPos] = useState(avatars[0].posy);
+  let [selectedAvatar, setSelectedAvatar] = useState<string>(avatars[0].id);
 
   let video: HTMLVideoElement;
   let faceLandmarker: FaceLandmarker;
@@ -121,6 +125,8 @@ function Home() {
         setOpen={setOpen}
         setURL={setURL}
         setCurrentPos={setCurrentPos}
+        selectedAvatar={selectedAvatar}
+        setSelectedAvatar={setSelectedAvatar}
       />
 
       <div className="bg-[#1a1a1a] w-full max-w-xl rounded-xl p-6 shadow-xl flex flex-col gap-5 border border-[#2a2a2a]">
@@ -151,7 +157,15 @@ function Home() {
             <pointLight position={[-2, 1, -1]} color={color} intensity={50} />
 
             {/* Avatar */}
-            <Avatar url={url} currentPos={currentPos} />
+            <Suspense
+              fallback={
+                <Html center>
+                  <HashLoader color="#4DAAED" />
+                </Html>
+              }
+            >
+              <Avatar url={url} currentPos={currentPos} />
+            </Suspense>
           </Canvas>
         </div>
       </div>

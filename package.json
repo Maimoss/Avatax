@@ -20,6 +20,7 @@
     "react-best-gradient-color-picker": "^3.0.14",
     "react-dom": "^19.2.0",
     "react-router-dom": "^7.9.6",
+    "react-spinners": "^0.17.0",
     "tailwindcss": "^4.1.17",
     "three": "^0.181.2"
   },
