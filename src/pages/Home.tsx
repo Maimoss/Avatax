@@ -131,7 +131,7 @@ function Home() {
       <div className="bg-[#1a1a1a] w-full max-w-xl rounded-xl p-6 shadow-xl flex flex-col gap-5 border border-[#2a2a2a]">
         <div
           className="
-    rounded-xl overflow-hidden border border-[#333] shadow-lg w-full h-[200px] md:h-[340px] lg:h-[300px]"
+    rounded-xl overflow-hidden border border-[#333] shadow-lg w-full h-[250px] md:h-[340px] lg:h-[300px]"
         >
           <video
             autoPlay
