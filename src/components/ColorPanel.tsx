@@ -17,7 +17,7 @@ const ColorPanel = () => {
           onClick={() => setColorPickerPopUp(!colorPickerPopUp)}
         >
           <motion.div
-            className="bg-white/99 px-7 py-5 w-[350px] rounded-2xl shadow-xl relative"
+            className="bg-white/99 dark:bg-[#202020] px-7 py-5 w-[350px] rounded-2xl shadow-xl relative"
             initial={{ scale: 0.7, opacity: 0, y: 20 }}
             animate={{ scale: 1, opacity: 1, y: 0 }}
             exit={{ scale: 0.7, opacity: 0, y: 20 }}
